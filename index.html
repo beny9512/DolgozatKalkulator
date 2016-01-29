@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dolgozat százalék kalkulátor</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <script type="text/javascript">
+  function calc(){
+  	var ossz = document.getElementById("max").value;
+  	var elert = document.getElementById("elert").value;
+  	if (ossz != "" && elert != "") {
+  		document.getElementById("szazalek").innerHTML = Math.round(elert/ossz*100) + "%";
+  	}else{
+  		document.getElementById("szazalek").innerHTML = "Minden mező megadása kötelező!";
+  	}
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+    <div class="one-third column">&nbsp;</div>
+      <div class="two-thirds column" style="margin-top: 10%">
+        <h4>Dolgozat százalék kalkulátor</h4>
+        <p>
+        	<table border="0" cellpadding="1" cellspacing="1" style="">
+        		<tbody>
+        			<tr>
+        				<td>Max. pontsz&aacute;m:</td>
+        				<td><input type="number" id="max" pattern="\d*"></td>
+        			</tr>
+        			<tr>
+        				<td>El&eacute;rt pontsz&aacute;m:</td>
+        				<td><input type="number" id="elert" pattern="\d*"></td>
+        			</tr>
+        			<tr>
+        			<td colspan="2"><button onclick="calc()">Kiszámít!</button></td>
+        			</tr>
+        		</tbody>
+        	</table>
+        </p>
+        <p id="szazalek"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
